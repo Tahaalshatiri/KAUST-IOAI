@@ -14,12 +14,12 @@ each competition's **baseline / solution notebook**.
 ```
 KAUST-IOAI/
 ├── days/
-│   ├── Day-1/
+│   ├── Day-01/
 │   │   ├── <lab notebooks>.ipynb            ← labs, at day level
 │   │   └── <competition folder>/
 │   │       ├── <baseline notebook>.ipynb    ← baseline / solution
 │   │       └── README.md                    ← comp description (when available)
-│   ├── Day-2/
+│   ├── Day-02/
 │   └── ...
 ├── scripts/
 │   ├── extract_notebooks_from_zips.py   ← pulls notebooks out of comp dataset zips
@@ -58,16 +58,16 @@ committed notebooks — beat them!
 
 | Day | Competition | Topic | Baseline (score) | Kaggle link |
 |-----|-------------|-------|------------------|-------------|
-| 1 | [Sensory readings classification](days/Day-1/sensory-readings%20comp/) | Tabular ML | student notebook | _TODO_ |
-| 3 | [EMNIST 4-digit classification](days/Day-3/EMNIST%204%20digit%20comp/) | Vision | student notebook | _TODO_ |
-| 4 | [Animal classification using crops](days/Day-4/Animal%20classification%20using%20crops%20comp/) | Vision | student notebook | _TODO_ |
-| 4 | [Food image matching](days/Day-4/Food%20%20Image%20matching%20Comp/) | Vision / CLIP | student notebook | _TODO_ |
-| 5 | [Pet segmentation](days/Day-5(exam)/Pet%20segmentation%20competition/) | Vision | student notebook | _TODO_ |
-| 5 | [Agent rumble](days/Day-5(exam)/agent%20rumble%20competition/) | Agents | student notebook | _TODO_ |
-| 6 | [Decode schizophrenia](days/Day-6/Decode%20schizophrenia%20comp/) | ML / neuroscience | student notebook | _TODO_ |
-| 9 | [Animal voice detection](days/Day-9/animal-voice-detection/) | Audio | ResNet18+LR (acc 0.60) | _TODO_ |
-| 9 | [Coins counting](days/Day-9/coins%20counting/) | Vision | ResNet18+Ridge (MAE 322 grosz) | _TODO_ |
-| 9 | [Tricy table](days/Day-9/tricy-table/) | Tabular ML | LightGBM (MAE 3.37) | _TODO_ |
+| 1 | [Sensory readings classification](days/Day-01/sensory-readings%20comp/) | Tabular ML | student notebook | _TODO_ |
+| 3 | [EMNIST 4-digit classification](days/Day-03/EMNIST%204%20digit%20comp/) | Vision | student notebook | _TODO_ |
+| 4 | [Animal classification using crops](days/Day-04/Animal%20classification%20using%20crops%20comp/) | Vision | student notebook | _TODO_ |
+| 4 | [Food image matching](days/Day-04/Food%20%20Image%20matching%20Comp/) | Vision / CLIP | student notebook | _TODO_ |
+| 5 | [Pet segmentation](days/Day-05(exam)/Pet%20segmentation%20competition/) | Vision | student notebook | _TODO_ |
+| 5 | [Agent rumble](days/Day-05(exam)/agent%20rumble%20competition/) | Agents | student notebook | _TODO_ |
+| 6 | [Decode schizophrenia](days/Day-06/Decode%20schizophrenia%20comp/) | ML / neuroscience | student notebook | _TODO_ |
+| 9 | [Animal voice detection](days/Day-09/animal-voice-detection/) | Audio | ResNet18+LR (acc 0.60) | _TODO_ |
+| 9 | [Coins counting](days/Day-09/coins%20counting/) | Vision | ResNet18+Ridge (MAE 322 grosz) | _TODO_ |
+| 9 | [Tricy table](days/Day-09/tricy-table/) | Tabular ML | LightGBM (MAE 3.37) | _TODO_ |
 | 10 | [Intent classification (RU→EN)](days/Day-10/intent-classification-rus-to-eng/) | NLP | student notebook | _TODO_ |
 | 10 | [Math questions classification](days/Day-10/math-questions-classification/) | NLP | student notebook | _TODO_ |
 | 13 | [Classifying corrupted images](days/Day-13/classifying-curropted-images/) | Vision | ResNet18+LR (acc 0.86) | _TODO_ |
