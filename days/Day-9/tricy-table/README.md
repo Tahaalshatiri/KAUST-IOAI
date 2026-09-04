@@ -42,3 +42,7 @@ The dataset intentionally contains missing values. Good strategies:
 - use the time columns `day`, `hour`, `minute`
 - try target transforms such as log target
 - train with LightGBM / tree models
+
+## Baseline
+
+`baseline.ipynb` — LightGBM on all features. CV MAE **3.37**, score **0.229**.
