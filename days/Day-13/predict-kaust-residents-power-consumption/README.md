@@ -49,3 +49,7 @@ Useful features usually include:
 
 Production rows are strongly connected to solar radiation and installed capacity.
 Consumption rows are often more connected to hour-of-day and weekday patterns.
+
+## Baseline
+
+`baseline.ipynb` — LightGBM on provided features, time-based validation (last 14 days). Validation MAE: **67.1**, metric score: **0.0147**.

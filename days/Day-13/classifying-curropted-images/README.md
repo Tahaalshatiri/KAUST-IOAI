@@ -39,3 +39,7 @@ Accuracy.
 ## Note
 
 The test images may not have exactly the same visual distribution as the training images. Robust preprocessing and validation are important.
+
+## Baseline
+
+`baseline.ipynb` — ResNet-18 (frozen, ImageNet) features + Logistic Regression. 5-fold CV accuracy: **0.862**.
