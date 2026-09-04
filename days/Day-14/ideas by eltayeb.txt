@@ -1,0 +1,30 @@
+# Ideas for Improvements in NLP:
+# 1- Knowledge distillation and Pseudo labeling
+# 2- Preprocessing: Since Deberta tokenizer ignores "\n", replace "\n\n" with "|"
+# 3- AWP
+# 4- Change the max len for each epoch (e.g. Max len = 470, trained with decreasing max len - 768/512/470/470)
+# 5- Seed Average
+# 6-  Deberta v3 large tokenizer simply ignores these \n. So we decided to create one additional special token by replacing \n\n with [PARAGRAPH]. Also resized embeddings to take care of this one extra token.
+# 7- LSTM/GRU Pooling
+# 8- Different validation steps 20-250 for different models
+# 9- Ensemble using Linear model e.g. RidgeRegression
+# 10- Different loss functions e.g. Focal Loss, Ordinal regression, Asymmetric loss 
+# 11- Postprocessing Linear Regression / Nelder-Mead
+# 12- Augmentations Techniques (back translation, synonym replacement, sentence shuffling, and using synthetic data)
+# 13- Apply AWP (Adversarial weight perturbation), SiFT, MIXout, and so on..
+# 14- Use Dropout if you are working on classification only
+# 15- we train new diverse models. Then we run hill climbing to see if the new model gets chosen. We don't need to make a new model with a great CV score, we just need to make new models that are diverse.
+# 16- Clip grad norm with max_norm = 10 for example
+# 17- 2 stage pooling. First pool either words, sentences, or paragraphs. Then pool that result.:
+#     E.g. MaxPooling on each paragraph and MeanPooling on that result
+#     AttentionHead on each paragraph and MeanPooling on that result
+#     People use mean pooling over all these token outputs. Therefore each token has equal importance.
+#     In paragraph pooling, we first takes the mean of all tokens in each paragraph separately. We now have a single embedding for each paragraph. Next we take the mean of these embeddings. This gives each paragraph equal weight.
+# 18- Train with max_len=2048, infer max_len = 640
+#     Training with max_len=2048 allows the model to learn from all the provided train text. Once we have a smart model, it does not need to see the entire test essay to predict the targets. Hence during inference, it can use less. 
+#     First train a model with 2048. Then create OOF (using the same model again and again) with different inference lengths like 512, 640, 768, 1024 etc. Compute CV score and submit to LB. Using 640 achieved best CV and LB.
+#     Deberta uses "relative embeddings". Therefore if WORD_A in position 1500 relates to the word in position 1501. Then the model learns that WORD_A needs to pay attention to the word in position +1. Therefore when we infer with length 640 and the model sees WORD_A in position 550, it will look at position 551. In other words, the learnings from training with max_len=2028 will generalize to inference at max_len=640.
+# 19- Use lower batch size (e.g. 1)
+# 20- RAPIDS SVR using embeddings with/without train on comp data
+# 21- Stride window for non deberta models (Models like RoBERTa can only accept input with max_len = 512 tokens. So to train with sequences of len 2048, we need to train and infer using a sliding window.)
+# 22- Change the Model Architicture (i.e. forward function is where everything happening) Check ProtBert
