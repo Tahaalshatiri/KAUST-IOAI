@@ -1,0 +1,40 @@
+# Data — never commit competition data; it lives on Kaggle
+competitions/*/data/
+competitions/**/data/
+data/
+*.zip
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.npz
+*.npy
+*.pkl
+*.pt
+*.pth
+*.onnx
+*.bin
+*.tar
+*.tar.gz
+
+# Allow small sample/description CSVs when explicitly added with git add -f
+# (documented exception — keep them under ~100 KB)
+
+# Notebooks / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Kaggle credentials — NEVER commit these
+kaggle.json
+.kaggle/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
