@@ -14,12 +14,12 @@ each competition's **baseline / solution notebook**.
 ```
 KAUST-IOAI/
 ├── days/
-│   ├── Day-1/
+│   ├── Day-01/
 │   │   ├── <lab notebooks>.ipynb            ← labs, at day level
 │   │   └── <competition folder>/
 │   │       ├── <baseline notebook>.ipynb    ← baseline / solution
 │   │       └── README.md                    ← comp description (when available)
-│   ├── Day-2/
+│   ├── Day-02/
 │   └── ...
 ├── scripts/
 │   ├── extract_notebooks_from_zips.py   ← pulls notebooks out of comp dataset zips
