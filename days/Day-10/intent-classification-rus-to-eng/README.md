@@ -1,9 +1,3 @@
-# Intent Classification Rus To Eng
-
-**Kaggle competition link:** _TODO: add link_
-
-**Dataset download:** _TODO: add Google Drive link_ (folder: `Day-10/intent-classification-rus-to-eng`)
-
 # Cross-Lingual Russian Intent Detection and Slot Filling
 
 You are given labeled English NLU data and must predict intents and slot tags for Russian utterances.
@@ -45,8 +39,3 @@ score = 0.5 * weighted_f1(intent) + 0.5 * weighted_f1(slot_tags)
 ```
 
 Slot tags are flattened across all test tokens before scoring.
-
-## Files
-
-- `notebook0dadcb1fbb.ipynb` — baseline / solution notebook(s). Run top-to-bottom after
-  placing the competition data next to the notebook (or updating the paths).

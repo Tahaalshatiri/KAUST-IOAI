@@ -1,9 +1,3 @@
-# Math Questions Classification
-
-**Kaggle competition link:** _TODO: add link_
-
-**Dataset download:** _TODO: add Google Drive link_ (folder: `Day-10/math-questions-classification`)
-
 # Math Topic Classification
 
 Classify each math problem into one of 8 topics.
@@ -28,8 +22,3 @@ Metric: Macro F1. Rare classes matter.
 
 Suggested rule: no transformers / no LLM embeddings.
 Recommended methods: TF-IDF word/character n-grams, Logistic Regression, Linear SVM, Naive Bayes.
-
-## Files
-
-- `notebook5dda9f73cd.ipynb` — baseline / solution notebook(s). Run top-to-bottom after
-  placing the competition data next to the notebook (or updating the paths).
