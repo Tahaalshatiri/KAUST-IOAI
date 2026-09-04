@@ -1,23 +1,47 @@
-# Whitelist mode: ignore EVERYTHING except notebooks, scripts, and docs.
-# This lets you copy the full raw training folder (with all its data) into
-# the repo — git will only ever pick up the small teaching files.
+# Filter rules for this repo:
+#   - Any file sitting DIRECTLY in a Day folder (labs, slides, pdfs, anything)
+#     is kept as-is.
+#   - Inside competition subfolders (and extracted from zips), only notebooks,
+#     scripts and READMEs are kept — data files are never committed.
+#   - Dataset zips themselves are never committed (data lives on Drive/Kaggle);
+#     run scripts/extract_notebooks_from_zips.py to surface their notebooks.
 
-# 1) ignore everything...
+# 1) ignore everything by default...
 *
 
-# 2) ...but keep descending into folders so git can find the files below
+# 2) ...but keep descending into folders
 !*/
 
-# 3) ...and keep only these file types
+# 3) keep EVERY direct file inside a day folder (labs, slides, ...)
+!days/*/*
+
+# 4) ...except data archives and datasets at that level
+days/*/*.zip
+days/*/*.csv
+days/*/*.tsv
+days/*/*.parquet
+days/*/*.json
+days/*/*.jsonl
+days/*/*.npy
+days/*/*.npz
+days/*/*.pkl
+days/*/*.pt
+days/*/*.pth
+days/*/*.h5
+days/*/desktop.ini
+
+# 5) deeper levels (comp folders): keep only these
 !*.ipynb
 !*.py
+!README.md
+
+# 6) repo files at the root
 !*.md
 !*.sh
-!*.pdf
-!*.pptx
 !.gitignore
 
-# Even for kept types, never these:
+# never these, anywhere
 .ipynb_checkpoints/
 __pycache__/
+desktop.ini
 kaggle.json
