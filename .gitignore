@@ -1,6 +1,6 @@
 # Data — never commit competition data; it lives on Kaggle
-competitions/*/data/
-competitions/**/data/
+days/**/data/
+competitions/
 data/
 *.zip
 *.csv

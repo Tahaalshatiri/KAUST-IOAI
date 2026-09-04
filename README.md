@@ -3,84 +3,94 @@
 Training materials from the **KAUST program preparing high school students for the
 [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/)**.
 
-During the program, students competed in a series of private Kaggle competitions,
-each targeting a core AI/ML skill — from classic tabular machine learning to
-computer vision and NLP with deep learning. This repository collects, for every
-competition:
+The program ran as a series of training **days**. Each day combined hands-on
+**labs** with one or more private **Kaggle competitions**, covering the core IOAI
+skills — classic tabular machine learning, computer vision, and NLP with deep
+learning. This repository collects, for every day:
 
-- a short **explanation of the problem** (task, data, metric),
-- a clean, commented **baseline notebook** students can run and improve,
-- (where available) the **top solution / reference solution**,
-- a **link to the Kaggle competition** so the data can be downloaded.
-
-The goal is that a future student (or instructor) can open any competition folder,
-read the README, download the data with one command, run the baseline, and start
-climbing the leaderboard.
+- the **lab notebooks** used in class,
+- for each competition: a **README** (problem, data, metric, link) and the
+  **baseline / solution notebook**.
 
 ## Repository structure
 
 ```
 KAUST-IOAI/
 ├── README.md                  ← you are here
-├── competitions/
-│   ├── 01-<comp-name>/
-│   │   ├── README.md          ← problem statement, data, metric, comp link
-│   │   ├── baseline.ipynb     ← starter notebook (runs top-to-bottom)
-│   │   ├── solution.ipynb     ← reference / winning solution (optional)
-│   │   └── data/              ← NOT in git — downloaded from Kaggle (see below)
-│   ├── 02-<comp-name>/
+├── days/
+│   ├── Day-01/
+│   │   ├── <Lab Name>.ipynb           ← labs, kept at day level
+│   │   └── <competition-name>/
+│   │       ├── README.md              ← problem, data, metric, comp link
+│   │       └── <baseline>.ipynb       ← baseline / solution notebook
+│   ├── Day-02/
 │   └── ...
 ├── scripts/
+│   ├── organize_days.py       ← turns the raw training dump into this layout
 │   └── download_data.sh       ← downloads a competition's data via the Kaggle API
 └── docs/
     └── SETUP.md               ← environment setup for students
 ```
 
-> **Note:** raw data is intentionally **not stored in this repository** (the
-> combined datasets are ~1 GB). Each competition README links to its Kaggle page,
-> and `scripts/download_data.sh` fetches the data into the right folder.
+> **Where is the data?** Competition datasets are intentionally **not stored in
+> git** (they total ~1 GB). Get them either from the Kaggle competition pages or
+> from the shared Google Drive folder:
+>
+> - **Google Drive (all datasets):** _TODO: add link_
+> - Each competition's `README.md` has (or will have) its Kaggle link.
 
 ## Quick start (for students)
 
-1. **Set up Kaggle API access** (once):
-   - Create an account on [kaggle.com](https://www.kaggle.com) and, for private
-     competitions, accept the invite link in the competition README.
-   - Go to *Kaggle → Settings → API → Create New Token*; save the downloaded
-     `kaggle.json` to `~/.kaggle/kaggle.json` (and `chmod 600 ~/.kaggle/kaggle.json`).
-   - `pip install kaggle`
+1. Pick a day under `days/` and open its lab notebooks, or pick a competition
+   folder and read its `README.md`.
+2. Download that competition's data (Kaggle link in the README, or the Drive
+   folder above) and place it next to the notebook (or update the paths at the
+   top of the notebook).
+3. Run the baseline top-to-bottom, then try to beat it.
 
-2. **Pick a competition** from `competitions/` and read its `README.md`.
+Environment setup (Python, Kaggle API token): see [`docs/SETUP.md`](docs/SETUP.md).
 
-3. **Download its data:**
-   ```bash
-   ./scripts/download_data.sh <kaggle-competition-slug> competitions/<folder-name>/data
-   ```
+## Competitions index
 
-4. **Run the baseline** (`baseline.ipynb`) top-to-bottom, then try to beat it.
-   Ideas for improvement are listed at the end of each baseline.
+<!-- TODO: fill links as they are added. One row per competition. -->
 
-## Competitions
+| Day | Competition | Topic | Kaggle link |
+|-----|-------------|-------|-------------|
+| 01 | [Sensory readings classification](days/Day-01/sensory-readings/) | Tabular ML | _TODO_ |
+| 03 | [EMNIST 4-digit classification](days/Day-03/emnist-4-digit/) | Computer vision | _TODO_ |
+| 04 | [Animal classification using crops](days/Day-04/animal-classification-using-crops/) | Computer vision | _TODO_ |
+| 04 | [Food image matching](days/Day-04/food-image-matching/) | Computer vision / CLIP | _TODO_ |
+| 10 | [Intent classification (RU→EN)](days/Day-10/intent-classification-rus-to-eng/) | NLP | _TODO_ |
+| 10 | [Math questions classification](days/Day-10/math-questions-classification/) | NLP | _TODO_ |
 
-<!-- Table is filled in as competitions are added. Keep it sorted by number. -->
+## Maintaining this repo
 
-| # | Competition | Topic | Task type | Metric | Link |
-|---|-------------|-------|-----------|--------|------|
-| 01 | _TBD_ | _e.g. Tabular ML_ | _e.g. binary classification_ | _e.g. AUC_ | _[Kaggle](#)_ |
+The raw training folder (with datasets, slides, etc.) is turned into this clean
+layout by one script:
+
+```bash
+python scripts/organize_days.py /path/to/raw/KAUST-IOAI-folder
+```
+
+It walks every `Day-N` folder, digs into competition subfolders **and** dataset
+zips, and keeps only `.ipynb`/`.py` files plus competition descriptions —
+skipping all data files, slides, and junk. It also generates a `README.md` stub
+(with a `TODO` link placeholder) for each competition, and never overwrites a
+README you've already edited. Re-running it is safe.
+
+Rules of thumb:
+
+- **Never commit data** — `.gitignore` blocks `*.csv`, `*.zip`, images, etc.
+  Data lives on Kaggle / Google Drive.
+- One folder per competition inside its day, lowercase-hyphenated name.
+- When adding a new day, just drop the raw folder into the dump and re-run the
+  script, then fill in the links.
 
 ## About the program
 
 This training was run at **KAUST (King Abdullah University of Science and
-Technology)** to prepare high school students for the **IOAI**, the international
-olympiad covering machine learning, computer vision, and natural language
-processing. The competitions here mirror the olympiad's style: short, focused
-problems where a well-understood baseline plus careful iteration beats
+Technology)** to prepare high school students for the **IOAI**, the
+international olympiad covering machine learning, computer vision, and natural
+language processing. The competitions mirror the olympiad's style: short,
+focused problems where a well-understood baseline plus careful iteration beats
 complexity.
-
-## Contributing / maintaining
-
-- One folder per competition under `competitions/`, numbered in the order they
-  were run. Copy `competitions/_template/` to start a new one.
-- Never commit data files — `.gitignore` blocks `competitions/*/data/` and common
-  data extensions. Keep the repo small; data lives on Kaggle.
-- Clear notebook outputs before committing **unless** the outputs are small and
-  instructive (a final score, a few plots).
