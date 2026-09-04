@@ -6,3 +6,7 @@
 folder (link in the main README), or the Kaggle page above.
 
 _TODO: short description of the competition (task, data, metric)._
+
+## Starter
+
+`starter.ipynb` — documented GPU starter (system-prompt steering + activation-steering recipe). Requires Kaggle/Colab GPU.
