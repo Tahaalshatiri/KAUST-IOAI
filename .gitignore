@@ -1,0 +1,21 @@
+# Whitelist mode: ignore EVERYTHING except notebooks, scripts, and docs.
+# This lets you copy the full raw training folder (with all its data) into
+# the repo — git will only ever pick up the small teaching files.
+
+# 1) ignore everything...
+*
+
+# 2) ...but keep descending into folders so git can find the files below
+!*/
+
+# 3) ...and keep only these file types
+!*.ipynb
+!*.py
+!*.md
+!*.sh
+!.gitignore
+
+# Even for kept types, never these:
+.ipynb_checkpoints/
+__pycache__/
+kaggle.json
