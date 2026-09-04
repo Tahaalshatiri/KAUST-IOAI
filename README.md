@@ -66,11 +66,13 @@ Adding new material is designed to be brainless:
 
 1. Copy the raw `Day-N` folder(s) — data and all — into `days/`.
 2. If a day contains competition **zips**, run
-   `python scripts/extract_notebooks_from_zips.py` once from the repo root; it
-   extracts only the notebook and README from each zip, next to it.
+   `python scripts/extract_notebooks_from_zips.py` once from the repo root. For
+   every zip it creates a matching folder with the baseline notebook and README
+   from inside the zip — or a placeholder README if the zip holds only data —
+   so every competition is visible in the repo.
 3. `git add .` → commit → push. The whitelist `.gitignore` guarantees only
-   `.ipynb` / `.py` / `.md` / `.sh` files are committed — never data, zips,
-   slides, or junk files.
+   `.ipynb` / `.py` / `.md` / `.sh` / `.pdf` / `.pptx` files are committed —
+   notebooks and slides, never data, zips, or junk files.
 
 Then fill in the competition's Kaggle link in the table above.
 

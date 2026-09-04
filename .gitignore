@@ -13,6 +13,8 @@
 !*.py
 !*.md
 !*.sh
+!*.pdf
+!*.pptx
 !.gitignore
 
 # Even for kept types, never these:
