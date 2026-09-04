@@ -62,8 +62,8 @@ committed notebooks — beat them!
 | 3 | [EMNIST 4-digit classification](days/Day-03/EMNIST%204%20digit%20comp/) | Vision | student notebook | _TODO_ |
 | 4 | [Animal classification using crops](days/Day-04/Animal%20classification%20using%20crops%20comp/) | Vision | student notebook | _TODO_ |
 | 4 | [Food image matching](days/Day-04/Food%20%20Image%20matching%20Comp/) | Vision / CLIP | student notebook | _TODO_ |
-| 5 | [Pet segmentation](days/Day-05(exam)/Pet%20segmentation%20competition/) | Vision | student notebook | _TODO_ |
-| 5 | [Agent rumble](days/Day-05(exam)/agent%20rumble%20competition/) | Agents | student notebook | _TODO_ |
+| 5 | [Pet segmentation](days/Day-05%28exam%29/Pet%20segmentation%20competition/) | Vision | student notebook | _TODO_ |
+| 5 | [Agent rumble](days/Day-05%28exam%29/agent%20rumble%20competition/) | Agents | student notebook | _TODO_ |
 | 6 | [Decode schizophrenia](days/Day-06/Decode%20schizophrenia%20comp/) | ML / neuroscience | student notebook | _TODO_ |
 | 9 | [Animal voice detection](days/Day-09/animal-voice-detection/) | Audio | ResNet18+LR (acc 0.60) | _TODO_ |
 | 9 | [Coins counting](days/Day-09/coins%20counting/) | Vision | ResNet18+Ridge (MAE 322 grosz) | _TODO_ |
@@ -88,8 +88,9 @@ committed notebooks — beat them!
 | 28 | [IOAI 2026 home task 2](days/Day-28/ioai-2026-home-task-2/) | RL / imitation | BC (acc 0.76) + BFS planner | _TODO_ |
 | 30 | [Rosetta embedding alignment](days/Day-30/rosetta-embedding-alignment/) | Embeddings | linear map + cosine NN (acc ~0.2) | _TODO_ |
 
-Days 27, 29, 31–33 contain the **Muraqam** Arabic-NLP project notebooks
-(diacritization / punctuation), and Day-21 holds reference papers.
+Days 2 and 8 hold lab notebooks only (no competition). Days 27, 29, 31–33
+contain the **Muraqam** Arabic-NLP project notebooks (diacritization /
+punctuation), and Day-21 holds reference papers.
 
 ## Maintaining this repo
 
