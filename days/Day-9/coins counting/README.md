@@ -53,3 +53,7 @@ Higher is better. Perfect prediction gives 1.0.
 ## Fixed split
 
 `SPLIT_SEED = 2026`
+
+## Baseline
+
+`baseline.ipynb` — frozen ResNet-18 features + Ridge regression. CV MAE **322 grosz** (mean target 711). See notebook for the intended Hough-circles approach.

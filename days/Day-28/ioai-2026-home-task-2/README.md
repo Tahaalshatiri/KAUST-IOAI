@@ -6,3 +6,7 @@
 folder (link in the main README), or the Kaggle page above.
 
 _TODO: short description of the competition (task, data, metric)._
+
+## Baseline
+
+`baseline.ipynb` — behavior cloning (action accuracy **0.765**) + optimal BFS planner for all scenarios.

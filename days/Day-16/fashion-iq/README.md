@@ -6,3 +6,7 @@
 folder (link in the main README), or the Kaggle page above.
 
 _TODO: short description of the competition (task, data, metric)._
+
+## Baseline
+
+`baseline.ipynb` — zero-shot CLIP: rank candidates by cosine to (reference image + modifier text) embedding. Accuracy **0.587** (random 0.10).

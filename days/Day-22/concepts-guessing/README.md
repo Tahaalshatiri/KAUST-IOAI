@@ -6,3 +6,7 @@
 folder (link in the main README), or the Kaggle page above.
 
 _TODO: short description of the competition (task, data, metric)._
+
+## Baseline
+
+`baseline.ipynb` — TF-IDF over question+answer documents + Logistic Regression ranking. Top-10 **0.470**, MRR@10 **0.203**.

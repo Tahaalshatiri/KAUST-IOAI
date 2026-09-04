@@ -6,3 +6,7 @@
 folder (link in the main README), or the Kaggle page above.
 
 _TODO: short description of the competition (task, data, metric)._
+
+## Baseline
+
+`baseline.ipynb` — TF-IDF + Logistic Regression with one round of confident-learning cleanup (CV vs noisy labels 0.767).

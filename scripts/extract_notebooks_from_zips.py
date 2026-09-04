@@ -46,25 +46,24 @@ _TODO: short description of the competition (task, data, metric)._
 extracted = 0
 for zpath in sorted(ROOT.rglob("*.zip")):
     outdir = zpath.with_suffix("")
-    try:
-        zf = zipfile.ZipFile(zpath)
-    except zipfile.BadZipFile:
-        print(f"skipping (not a valid zip): {zpath}")
-        continue
-
     zip_readme = None
-    with zf:
-        for info in zf.infolist():
-            name = Path(info.filename).name
-            if info.is_dir():
-                continue
-            if Path(name).suffix.lower() in KEEP:
-                outdir.mkdir(parents=True, exist_ok=True)
-                (outdir / name).write_bytes(zf.read(info))
-                print(f"extracted: {outdir / name}")
-                extracted += 1
-            elif name.lower() == "readme.md":
-                zip_readme = zf.read(info)
+    try:
+        with zipfile.ZipFile(zpath) as zf:
+            for info in zf.infolist():
+                name = Path(info.filename).name
+                if info.is_dir():
+                    continue
+                if Path(name).suffix.lower() in KEEP:
+                    outdir.mkdir(parents=True, exist_ok=True)
+                    (outdir / name).write_bytes(zf.read(info))
+                    print(f"extracted: {outdir / name}")
+                    extracted += 1
+                elif name.lower() == "readme.md":
+                    zip_readme = zf.read(info)
+    except Exception as e:
+        # A corrupt/unreadable zip must still get its placeholder folder below.
+        print(f"WARNING: could not read {zpath.name} ({e}) — "
+              "creating placeholder anyway")
 
     readme_path = outdir / "README.md"
     if not readme_path.exists():  # never clobber manual edits
