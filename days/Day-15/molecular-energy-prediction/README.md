@@ -6,3 +6,7 @@
 folder (link in the main README), or the Kaggle page above.
 
 _TODO: short description of the competition (task, data, metric)._
+
+## Baseline
+
+`baseline.ipynb` — per-molecule element counts + charge/geometry aggregates, LightGBM. CV MAE: **66.0 eV**.

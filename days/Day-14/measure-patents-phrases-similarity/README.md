@@ -12,3 +12,7 @@ Files:
 Metric: Pearson correlation.
 
 Scores should be between 0 and 1.
+
+## Baseline
+
+`baseline.ipynb` — char n-gram TF-IDF + Ridge with cosine feature. CV Pearson: **0.555**.

@@ -18,3 +18,7 @@ Metric:
 score = 1 / (1 + circular_mse)
 
 Because rotation is circular, label 1 and label 4 are adjacent.
+
+## Baseline
+
+`baseline.ipynb` — frozen ResNet-18 features + Logistic Regression. CV accuracy: **0.643**, circular-MSE score: **0.513**.
