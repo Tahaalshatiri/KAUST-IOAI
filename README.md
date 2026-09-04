@@ -1,7 +1,7 @@
 # KAUST IOAI Training — High School Program
 
-Training materials from the **KAUST program preparing high school students for the
-[International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/)**.
+Training materials from the **KAUST program preparing high school students that represented the Saudi national team in the
+[International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/)** in 2026. 
 
 The program ran as a series of training **days**. Each day combined hands-on
 **labs** with one or more private **Kaggle competitions**, covering the core
